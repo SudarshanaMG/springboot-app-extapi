@@ -17,16 +17,12 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    @GetMapping
-    public Map<String, Object> getTodo() {
-        return Map.of("id", 1, "title", "Mock Task", "completed", false);
+    public List<Todo> getTodos() {
+        return todoService.getTodos();
     }
-//    public List<Todo> getTodos() {
-//        return todoService.getTodos();
-//    }
-//    @GetMapping("/{id}")
-//    public Todo getTodoById(@PathVariable int id) {
-//        return todoService.getTodoById(id);
-//    }
+    @GetMapping("/{id}")
+    public Todo getTodoById(@PathVariable int id) {
+        return new Todo();
+    }
 }
 
